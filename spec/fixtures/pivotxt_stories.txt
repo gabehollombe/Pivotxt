@@ -1,0 +1,19 @@
+LabelOne LabelTwo
+  - feature one (description one)
+
+  - feature two (description two)
+    
+  - feature three with multiline desc following
+      desc line 1
+      desc line 2
+      desc line 3
+
+  [] chore one (chore desc one)
+
+  [] chore two with multiline desc
+    chore desc line 1
+    chore desc line 2
+
+
+LabelThree
+  - feature four (desc for feature four)

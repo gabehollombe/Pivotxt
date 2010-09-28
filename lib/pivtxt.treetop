@@ -1,0 +1,135 @@
+grammar Pivtxt
+
+  rule label_groups
+    labeled_stories*
+    {
+      def value
+        elements.collect{|e| e.value}
+      end
+    }
+  end
+
+  rule labeled_stories
+    blank_line*
+    labels:(one_line "\n")
+    stories
+    {
+      def value
+        { :labels => labels.text_value.split(' '),
+          :stories => stories.stories_array
+        }
+      end
+    }
+  end
+
+  rule stories
+    story*
+    {
+      def stories_array
+        elements.collect {|e| e.value}
+      end
+    }
+  end
+
+  rule story
+    blank_line*
+    item:(feature / chore)
+    {
+      def value
+        item.value
+      end
+    }
+  end
+
+  rule feature
+    indent '- ' 
+    story_body
+    {
+      def value
+        {:type => :feature, :title => story_body.title, :description => story_body.description}
+      end
+    }
+  end
+
+  rule chore
+    indent '[] '
+    story_body
+    {
+      def value
+        {:type => :chore, :title => story_body.title, :description => story_body.description}
+      end
+    }
+  end
+
+  rule story_body
+    title
+    description:( 
+      "\n" multiline_description { def value; multiline_description.value; end }
+      / 
+      inline_description "\n" { def value; inline_description.value; end }
+    )
+  end
+
+  rule title
+    plain_text { 
+      def value
+        text_value 
+      end 
+    }
+  end
+
+  rule inline_description
+    (
+      '(' inline_description ')'
+      /
+      plain_text
+    ) 
+    {
+      def value
+        text_value
+      end
+    }
+  end
+
+  rule multiline_description
+    (indent indent one_line "\n")*
+    {
+      def value
+        text_value
+      end
+    }
+  end
+
+
+
+
+  #==========================================
+  # Utility rules
+  #==========================================
+
+  rule plain_text
+    (!non_plain .)*
+  end
+
+  # Characters not allowed in a one-line text fragment
+  rule non_plain
+    ([()] / "\n")
+  end
+
+
+  # Any text to end of line:
+  rule one_line
+    (!"\n" .)*
+  end
+
+
+  rule blank_line
+    [ \t]* "\n"
+  end
+
+
+  rule indent
+    '  '
+  end
+
+end
