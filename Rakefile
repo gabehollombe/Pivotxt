@@ -5,11 +5,11 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "pivotxt"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Pivotxt lets you easily create stories in Pivotal Tracker from a simple text file.}
+    gem.description = %Q{Pivotxt lets you easily create stories in Pivotal Tracker from a simple text file.}
     gem.email = "gabe@avantbard.com"
     gem.homepage = "http://github.com/gabehollombe/pivotxt"
-    gem.authors = ["Gabe"]
+    gem.authors = ["Gabe Hollombe"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
