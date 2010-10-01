@@ -1,7 +1,0 @@
-= Pivotxt
-
-Easily create stories in Pivotal Tracker from a simple text file.
-
-== Copyright
-
-MIT Licensed.  Copyright (c) 2010 Gabe Hollombe. See LICENSE for details.
