@@ -3,9 +3,10 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe Pivotxt do
   before do
     stories_file = File.join(File.dirname(__FILE__), 'fixtures', 'pivotxt_stories.txt')
+    config_file = File.join(File.dirname(__FILE__), '..', 'pivotxt_config.yml')
 
     PivotalTracker::Project.stub!(:find).and_return(PivotalTracker::Project.new)
-    @pivotxt = Pivotxt.new(stories_file)
+    @pivotxt = Pivotxt.new(stories_file, config_file)
   end
 
   it 'sets the pivotal project as configured' do
