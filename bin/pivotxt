@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+$:.unshift(File.join(File.dirname(File.dirname(__FILE__)), '..', 'lib'))
+require 'rubygems'
+require 'pivotxt'
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+  opts.on("-r", "--reverse", "Reverse story creation order") do |v|
+    options[:reverse] = v
+  end
+end.parse!
+
+story_file = ARGV.empty? ? "stories.pivotxt" : ARGV[0]
+
+pivotxt = Pivotxt.new(story_file, '../pivotxt_config.yml')
+pivotxt.upload_stories!
