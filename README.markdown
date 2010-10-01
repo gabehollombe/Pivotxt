@@ -1,6 +1,15 @@
-# Pivotxt
+# Pivotxt lets you easily create stories in Pivotal Tracker from a simple text file.
 
-Easily create stories in Pivotal Tracker from a simple text file.
+Sure, there's [slurper](http://github.com/hashrocket/slurper) but I didn't like slurper's file format; it's too YAML-y.  
+Hint: if you need a vim plugin to help you write your stories file, it's probably overly-complicated.
+
+So, I drafted a simple file format that I'd like to use, I wrote a grammar in Treetop to parse that format.  Pivotxt is the result.  Hopefully you'll find it as useful as I do. 
+
+## Configuration & Usage
+1.  Stick your appropriate values into pivotxt_config.yml
+2.  Use bin/pivotxt like this: pivotxt stories.pivotxt
+3.  You're done.
+
 
 ## Sample stories.pivotxt file format
 <pre>
@@ -29,6 +38,7 @@ AnotherLabel
       This feature belongs to a new label group called 'AnotherLabel' 
       and it will be the only story created for the 'AnotherLabel' label.
 </pre>
+
 
 ## Copyright
 
