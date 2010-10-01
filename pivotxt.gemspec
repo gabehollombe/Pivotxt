@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
      "bin/pivotxt",
      "lib/pivotxt.rb",
      "lib/pivtxt.treetop",
+     "pivotxt.gemspec",
      "pivotxt_config.yml",
      "spec/fixtures/pivotxt_stories.txt",
      "spec/pivotxt_spec.rb",
