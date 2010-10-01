@@ -40,6 +40,11 @@ AnotherLabel
 </pre>
 
 
+## Acknowledgements
+* Special thanks to Clifford Heath ([@cliffordheath](http://twitter.com/cliffordheath)) for helping me grok Treetop and get started with my grammar.
+* Thanks to [Hashrocket's slurper](http://github.com/hashrocket/slurper) for the inspriation.
+
+
 ## Copyright
 
 MIT Licensed.  Copyright (c) 2010 Gabe Hollombe. See LICENSE for details.
