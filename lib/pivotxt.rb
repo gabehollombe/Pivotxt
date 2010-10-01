@@ -1,9 +1,13 @@
+require 'treetop'
+require 'pivotal-tracker'
+require 'yaml'
+
 class Pivotxt
   attr_reader :project
 
-  def initialize(file)
-    @stories_file = file
-    @config = YAML.load_file('pivotxt_config.yml')
+  def initialize(stories_file, config_file)
+    @stories_file = stories_file
+    @config = YAML.load_file(config_file)
 
     PivotalTracker::Client.token = @config['token']
     @project = PivotalTracker::Project.find(@config['project_id'])
@@ -28,7 +32,7 @@ class Pivotxt
       stories.each do |story|
         title = story[:title].value
         description = story[:description].value
-        @project.stories.create(:name => title, :description => description, :labels => labels)
+        @project.stories.create(:name => title, :description => description, :labels => labels, :story_type => story[:type].to_s)
       end
     end
 
