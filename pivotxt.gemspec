@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pivotxt}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Gabe Hollombe"]
-  s.date = %q{2010-10-01}
+  s.date = %q{2010-12-14}
   s.default_executable = %q{pivotxt}
   s.description = %q{Pivotxt lets you easily create stories in Pivotal Tracker from a simple text file.}
   s.email = %q{gabe@avantbard.com}
