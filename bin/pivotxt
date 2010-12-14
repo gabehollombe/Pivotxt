@@ -1,7 +1,10 @@
 #!/usr/bin/env ruby
 
-$:.unshift(File.join(File.dirname(File.dirname(__FILE__)), '..', 'lib'))
 require 'rubygems'
+require 'bundler/setup'
+
+$:.unshift(File.join(File.dirname(File.dirname(__FILE__)), '..', 'lib'))
+
 require 'pivotxt'
 require 'optparse'
 

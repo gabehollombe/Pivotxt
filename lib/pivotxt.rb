@@ -29,12 +29,11 @@ class Pivotxt
     labeled_groups.each do |labeled_group|
       labels = labeled_group[:labels]
       stories = labeled_group[:stories]
-      stories.each do |story|
+      stories.reverse.each do |story|
         title = story[:title].value
         description = story[:description].value
         @project.stories.create(:name => title, :description => description, :labels => labels, :story_type => story[:type].to_s)
       end
     end
-
   end
 end
