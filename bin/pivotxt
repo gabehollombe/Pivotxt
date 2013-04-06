@@ -13,9 +13,14 @@ OptionParser.new do |opts|
   opts.on("-r", "--reverse", "Reverse story creation order") do |v|
     options[:reverse] = v
   end
+
+  opts.on("-c", "--config-file [CONFIG_FILE]", "Configuration file") do |v|
+    options[:config_file] = v
+  end
 end.parse!
 
 story_file = ARGV.empty? ? "stories.pivotxt" : ARGV[0]
 
-pivotxt = Pivotxt.new(story_file, '~/.pivotxt_config.yml')
+pivotxt = Pivotxt.new(story_file, options[:config_file] || '~/.pivotxt_config.yml')
 pivotxt.upload_stories!
+
