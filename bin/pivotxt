@@ -17,5 +17,5 @@ end.parse!
 
 story_file = ARGV.empty? ? "stories.pivotxt" : ARGV[0]
 
-pivotxt = Pivotxt.new(story_file, '../pivotxt_config.yml')
+pivotxt = Pivotxt.new(story_file, '~/.pivotxt_config.yml')
 pivotxt.upload_stories!
