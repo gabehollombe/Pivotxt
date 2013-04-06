@@ -16,7 +16,7 @@ class Pivotxt
   def load_stories
     grammar = File.join(File.dirname(__FILE__), 'pivtxt.treetop')
     Treetop.load grammar
-    
+
     parser = PivtxtParser.new
     parser.consume_all_input = false
     tree = parser.parse(File.read(@stories_file).to_s)
