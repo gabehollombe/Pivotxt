@@ -2,15 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     builder (3.1.4)
-    columnize (0.3.6)
     crack (0.3.2)
-    debugger (1.2.4)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.1.1)
-      debugger-ruby_core_source (~> 1.1.7)
-    debugger-linecache (1.1.2)
-      debugger-ruby_core_source (>= 1.1.1)
-    debugger-ruby_core_source (1.1.7)
     diff-lcs (1.1.3)
     fakeweb (1.3.0)
     happymapper (0.4.0)
@@ -47,7 +39,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  debugger
   fakeweb
   pivotal-tracker
   rspec (>= 2.0.0.beta.17)
