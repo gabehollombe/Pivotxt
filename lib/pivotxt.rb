@@ -10,6 +10,7 @@ class Pivotxt
     @config = YAML.load_file(config_file)
 
     PivotalTracker::Client.token = @config['token']
+    PivotalTracker::Client.use_ssl = @config['ssl'] == true
     @project = PivotalTracker::Project.find(@config['project_id'])
   end
 
