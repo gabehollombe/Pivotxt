@@ -44,6 +44,9 @@ AnotherLabel
 * Special thanks to Clifford Heath ([@cliffordheath](http://twitter.com/cliffordheath)) for helping me grok Treetop and get started with my grammar.
 * Thanks to [Hashrocket's slurper](http://github.com/hashrocket/slurper) for the inspriation.
 
+## Contributors
+* @gabehollombe
+* @dpickett
 
 ## Copyright
 
