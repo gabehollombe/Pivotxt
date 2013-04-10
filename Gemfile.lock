@@ -1,26 +1,35 @@
-GEM
-  remote: http://rubygems.org/
+PATH
+  remote: .
   specs:
-    builder (3.1.4)
-    columnize (0.3.6)
+    pivotxt (0.1.1)
+      pivotal-tracker
+      pivotxt
+      treetop
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    builder (3.2.0)
+    coderay (1.0.9)
     crack (0.3.2)
-    debugger (1.2.4)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.1.1)
-      debugger-ruby_core_source (~> 1.1.7)
-    debugger-linecache (1.1.2)
-      debugger-ruby_core_source (>= 1.1.1)
-    debugger-ruby_core_source (1.1.7)
-    diff-lcs (1.1.3)
     fakeweb (1.3.0)
+    git (1.2.5)
     happymapper (0.4.0)
       libxml-ruby (~> 2.0)
-    libxml-ruby (2.4.0)
-    mime-types (1.19)
-    nokogiri (1.5.6)
+    jeweler (1.8.4)
+      bundler (~> 1.0)
+      git (>= 1.2.5)
+      rake
+      rdoc
+    json (1.7.7)
+    libxml-ruby (2.6.0)
+    method_source (0.8.1)
+    mime-types (1.22)
+    nokogiri (1.5.9)
     nokogiri-happymapper (0.5.6)
       nokogiri (~> 1.5)
     pivotal-tracker (0.5.10)
+      builder
       builder
       crack
       happymapper (>= 0.3.2)
@@ -28,17 +37,19 @@ GEM
       nokogiri (>= 1.5.5)
       nokogiri-happymapper (>= 0.5.4)
       rest-client (~> 1.6.0)
+      rest-client (~> 1.6.0)
     polyglot (0.3.3)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rake (10.0.3)
+    rdoc (4.0.1)
+      json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rspec (2.12.0)
-      rspec-core (~> 2.12.0)
-      rspec-expectations (~> 2.12.0)
-      rspec-mocks (~> 2.12.0)
-    rspec-core (2.12.2)
-    rspec-expectations (2.12.1)
-      diff-lcs (~> 1.1.3)
-    rspec-mocks (2.12.1)
+    rspec (1.2.9)
+    slop (3.4.4)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
@@ -47,8 +58,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  debugger
   fakeweb
-  pivotal-tracker
-  rspec (>= 2.0.0.beta.17)
-  treetop
+  jeweler
+  pivotxt!
+  pry
+  rake
+  rspec (~> 1.2.9)

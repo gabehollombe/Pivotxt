@@ -17,7 +17,7 @@ describe Pivotxt do
     before do
       @label_groups = @pivotxt.load_stories
     end
-    
+
     it 'returns label_groups' do
       @label_groups.length.should == 2
     end
@@ -25,8 +25,9 @@ describe Pivotxt do
 
   describe "#upload_stories!" do
     it 'creates a story of the appropriate type with the appropriate labels' do
-      @pivotxt.project.stories.stub!(:create).and_return(PivotalTracker::Story.new)
-      @pivotxt.project.stories.should_receive(:create).exactly(6).times
+      mock = double
+      mock.should_receive(:create).exactly(6).times
+      @pivotxt.project.stub(:stories).and_return(mock)
       @pivotxt.upload_stories!
     end
   end
